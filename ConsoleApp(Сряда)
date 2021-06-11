@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string filePath = @"D:\Desktop\Portfolio\NewApp.txt";
+
+            List<string> lines = File.ReadAllLines(filePath).ToList();
+
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+
+            lines.Add(Console.ReadLine());
+
+            File.WriteAllLines(filePath, lines);
+
+            Console.ReadLine();
+
+        }
+    }
+}
